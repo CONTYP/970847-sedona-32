@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [СЕРГЕЙ](https://up.htmlacademy.ru/htmlcss/32/user/970847).
-* Наставник: "VLAD ERMOLAEV".
+* Наставник: "Владислав Ермолаев".(https://htmlacademy.ru/profile/id128353)
 
 ---
 
