@@ -23,20 +23,18 @@
               </ul>
             </nav>  
                     <img class="navigation-logo" src="images/icons/logo-sedona.svg" alt="логотип города Сидона">
-              <!--Все эти мои коментарии в дальнейшем будут удалены-->
-              <!--В "демке" https://up.htmlacademy.ru/htmlcss/32/demos/5937#28
-              поиск, корзина и вход включены в nav, я поэтому так и сделал. исправляю. -->
+              
             <div class="user-servis">              
-                <div class="user-servis__searh">
+                <div class="user-servis__item">
                   <a class="user-servis__link" href="#">
                     <span class="visually-hidden">Поиск</span>
                   </a>
                 </div>
-                <div class="user-servis__basket">
+                <div class="user-servis__item">
                   <a class="user-servis__link" href="#">
                     <span class="visually-hidden">Избранное</span></a>
                 </div>
-                <div class="user-servis__entry">
+                <div class="user-servis__item">
                   <a class="user-servis__link" href="#">
                     <button class="btn btn-user-servis">Хочу сюда!</button>
                   </a>
@@ -46,6 +44,7 @@
           <!--the end header-->        
         <main class="main-index">
             <section class="main-top">
+              <div class="wrap-figure">
                 <h1 class="visually-hidden">Седона город в Аризоне</h1>
                     <figure class="main-top-figure">
                         <img class="figure-vector" src="images/icons/welcom-title.svg"
@@ -55,11 +54,14 @@
                         <img class="figure-vector" src="images/icons/sedona-title.svg"
                         width="457" height="214" alt="Sedona" >
                     </figure>
-                    <h2 class="main-top-title">Седона — небольшой городок в Аризоне,
-                        заслуживающий большего!</h2>
-                        <p class="main-top-caption">Рассмотрим 5 причин, по которым Седона круче,
-                            чем Гранд-Каньон!
-                        </p>                
+              </div>
+              <div class="wrap-title">
+                 <h2 class="main-top-title">Седона — небольшой городок в Аризоне,
+                    заслуживающий большего!</h2>
+                    <p class="main-top-caption">Рассмотрим 5 причин, по которым Седона круче,
+                         чем Гранд-Каньон!
+                    </p>
+              </div>                    
             </section>
             <!--the end main-top-->
             <section class="advantages">
@@ -134,9 +136,7 @@
                     </p>
                 <form class="main-search-form" action="https://echo.htmlacademy.ru/" method="POST">
                     <button class="btn search-button" type="button" value="ПОИСК ГОСТИНИЦЫ В СЕДОНЕ">
-                        ПОИСК ГОСТИНИЦЫ В СЕДОНЕ</button>
-                        <!--больше не делал т.к. в задании:                           
-                      "На этом этапе не нужно содержимое всплывающих окон и выпадающих блоков."-->
+                        ПОИСК ГОСТИНИЦЫ В СЕДОНЕ</button>        
                 </form>                
             </section>
              <!--the end main-search-->
@@ -152,9 +152,7 @@
               <!--the end mailing-->
         </main>            
         <footer class="page-footer">
-            <section class="footer-social"><!--эта секция сделана как в "демке",
-                только там заголовок не скрыт, может оставим?-->
-               <h2 class="visually-hidden">социальные сети</h2>
+            <div class="footer-social">            
                 <ul class="footer-social-list">
                   <li class="footer-social-item">
                     <a class="button" href="#">
@@ -172,10 +170,9 @@
                       </a>
                   </li>
                 </ul>            
-            </section>
+            </div>
             <!--the end footer-social-->
-              <div class="footer-contact">
-                <h2 class="visually-hidden">Номер телефона</h2>
+              <div class="footer-contact">               
                 <a class="footer-contact-phone" href="tel:+7 (812) 812-12-12">+7 (812) 812-12-12</a>        
               </div>      
               <figure class="footer-logo">
