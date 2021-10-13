@@ -35,12 +35,9 @@
                   <span class="visually-hidden">Избранное</span></a>
               </div>
               <div class="user-servis__entry">
-                <a class="user-servis__link" href="#">
-                  <button class="btn btn-user-servis">Хочу сюда!</button>
-                </a>
-              </div>
-          </div>
-          </header>
+                <a class="user-servis__link btn-go-to" href="#">Хочу сюда!</a>
+              </div>        
+        </header>
           <!--the end header-->
         <main class="main-inner">
           <section class="catalog-search">
@@ -58,10 +55,10 @@
                   </ul>
               </header>
                 <form class="catalog-filter" action="#" method="GET">
-                    <fieldset class="catalog-filter__group">
-                      <legend class="catalog-filter__title">Инфраструктура:</legend>
-                        <ul class="catalog-filter__list">
-                            <li class="catalog-filter__item">
+                    <fieldset class="catalog-filter-group">
+                      <legend class="catalog-filter-title">Инфраструктура:</legend>
+                        <ul class="catalog-filter-list">
+                            <li class="catalog-filter-item">
                               <label class="control"> 
                                 <input class="visually-hidden control-input" type="checkbox"
                                 name="swiming-pool" checked>
@@ -69,7 +66,7 @@
                                   <span class="control-label">Бассейн</span>
                               </label>
                             </li>
-                            <li class="catalog-filter__item">
+                            <li class="catalog-filter-item">
                                 <label class="control">
                                   <input class="visually-hidden control-input" type="checkbox"
                                   name="parcking" checked>
@@ -77,7 +74,7 @@
                                   <span class="control-label">Парковка</span>
                                 </label>
                             </li>
-                            <li class="catalog-filter__item">
+                            <li class="catalog-filter-item">
                               <label class="control">
                                 <input class="visually-hidden control-input" type="checkbox"
                                 name="wi-fi">
@@ -87,10 +84,10 @@
                             </li>
                         </ul>
                     </fieldset>
-                    <fieldset class="catalog-filter__group">
-                      <legend class="catalog-filter__title">Тип жилья:</legend>
-                      <ul class="catalog-filter__list">
-                        <li class="catalog-filter__item">
+                    <fieldset class="catalog-filter-group">
+                      <legend class="catalog-filter-title">Тип жилья:</legend>
+                      <ul class="catalog-filter-list">
+                        <li class="catalog-filter-item">
                           <label class="control">
                             <input class="visually-hidden control-input" type="radio"
                             name="type appartment" value="hotel" checked>
@@ -98,7 +95,7 @@
                               <span class="control-label">Гостиница</span>
                           </label>
                         </li>
-                        <li class="catalog-filter__item">
+                        <li class="catalog-filter-item">
                           <label class="control">
                             <input class="visually-hidden control-input" type="radio"
                             name="type appartment" value="motel">
@@ -106,7 +103,7 @@
                               <span class="control-label">Мотель</span>
                           </label>
                         </li>
-                        <li class="catalog-filter__item">
+                        <li class="catalog-filter-item">
                           <label class="control">
                             <input class="visually-hidden control-input" type="radio"
                             name="type appartment" value="appartment">
@@ -116,27 +113,24 @@
                         </li>
                       </ul>
                     </fieldset>
-                    <fieldset class="catalog-filter__gorup">
-                      <legend class="catalog-filter__title">Стоимость,&#8381;:</legend>
+                    <fieldset class="catalog-filter-gorup">
+                      <legend class="catalog-filter-title">Стоимость,&#8381;:</legend>
                       <!--символ не отображается??? в укоке появление рубля не объясняется-->
                       <label class="catalog-filter-label">
                         <input class="catalog-filter-input" type="number" name="min-price"
-                      value="0">от</label> <!--предпологается лейблу дать бордер а у инпута скрыть
-                      тогда "от" окажется внутри.???-->
+                      value="0">от</label>
                       <label class="catalog-filter-label">
                         <input class="catalog-filter-input" type="number" name="max-price"
-                        value="9000">до</label><!--???-->
+                        value="9000">до</label>
                         <button class="range-toggle toggle-min" type="button">
                           <span class="visually-hidden">Изменить минимальную цену.</span>
                         </button>
                         <button class="range-toggle toggle-max" type="button">
                           <span class="visually-hidden">Изменить максимальную цену.</span>
-                        </button><!--саму полосу ползунка в уроке не прописывают???
-                          возможно в css? как это будет работать в итоге я из лайва
-                        не понал, скопировал по анологии-->
+                        </button>
                     </fieldset>  
-                        <input class="btn btn-sub" type="submit" name="submit" value="Применить">
-                        <input class="btn btn-reset" type="reset" value="Сбросить">
+                        <input class="button btn-add" type="submit" name="submit" value="Применить">
+                        <input class="button btn-reset" type="reset" value="Сбросить">
                   </form>
             </div>
           </section>
@@ -167,7 +161,7 @@
                   <a href="#" class="button">
                     <span class="visually-hidden">Показать карточки</span>
                   </a>
-                </li> 
+                </li>
               </ul>
           </section>
            <!--the end sorting-->           
@@ -175,140 +169,121 @@
              <h2 class="visually-hidden">Список предложений</h2>
              <ul class="offer-list">
                <li class="offer-item">
-                    <a class="offer-item-link" href="http://(address of hotel)">
+                    <a class="offer-item-link" href="http://address_of_hotel">
                       <img class="hotel-image" src="images/foto/hotel-1.jpg" alt="вид месности">
                       <h3 class="offer-item-title">Amara Resort & Spa</h3>               
                         <span class="offer-appartment">Гостиница</span>
                         <span class="offer-price">от 4000 &#8381;</span>
                     </a>                 
-                    <p class="offer-item-p"><!--не знал как назвать, нужен для размещения в css-->
-                      <button class="btn btn-offer" href="http://(address of hotel)">
+                    <div class="offer-item-buttons">
+                      <a class="button btn-go-to" href="http://address_of_hotel">
                         ПОДРОБНЕЕ
-                      </button>
-                      <button class="btn btn-add">
-                        <a class="offer-link" href="#">В ИЗБРАННОЕ</a>
-                      </button>
-                    </p>                   
+                      </a>
+                      <button class="button btn-add">В ИЗБРАННОЕ</button>
+                    </div>                  
                     <div class="offer-rating">
-                        <div class="rating-star">
-                          <img class="star" src="images/icons/aster.svg" 
-                          width="18" height="17" alt="звезда рейтинга">
-                        </div>
+                        <div class="rating-star"></div>
                         <div class="table-rating">Рейтинг: 8,5</div>
-                      </div>
+                    </div>
                 </li>
                 <li class="offer-item">
-                    <a class="offer-item-link" href="http://(address of hotel)">
+                    <a class="offer-item-link" href="http://address_of_hotel">
                       <img class="hotel-image" src="images/foto/hotel-2.jpg" alt="вид месности">
                       <h3 class="offer-item-title">Desert Quail Inn</h3>               
                         <span class="offer-appartment">Мотель</span>
                         <span class="offer-price">от 3000 &#8381;</span>                   
                     </a>
-                    <p class="offer-item-p">
-                      <button class="btn btn-offer" href="http://(address of hotel)">
+                    <div class="offer-item-buttons">
+                      <a class="button btn-go-to" href="http://address_of_hotel">
                         ПОДРОБНЕЕ
-                      </button>
-                      <button class="btn btn-add">
-                        <a class="offer-link" href="#">В ИЗБРАННОЕ</a>
-                      </button>
-                    </p>                  
+                      </a>
+                      <button class="button btn-add">В ИЗБРАННОЕ</button>
+                    </div>                  
                     <div class="offer-rating">
-                        <div class="rating-star">
-                          <img class="star" src="images/icons/aster.svg" 
-                          width="18" height="17" alt="звезда рейтинга">
-                        </div>
+                        <div class="rating-star"></div>
                         <div class="table-rating">Рейтинг: 8,9</div>
-                      </div>                                    
+                    </div>                                 
                 </li>
                 <li class="offer-item">
-                    <a class="offer-item-link" href="http://(address of hotel)">
+                    <a class="offer-item-link" href="http://address_of_hotel">
                       <img class="hotel-image" src="images/foto/hotel-3.jpg" alt="вид месности">
                       <h3 class="offer-item-title">Villas at Poco Diablo</h3>               
                         <span class="offer-appartment">Апартометны</span>
                         <span class="offer-price">от 2000 &#8381;</span>                   
                     </a>
-                    <p class="offer-item-p">
-                      <button class="btn btn-offer" href="http://(address of hotel)">
+                    <div class="offer-item-buttons">
+                      <a class="button btn-go-to" href="http://address_of_hotel">
                         ПОДРОБНЕЕ
-                      </button>
-                      <button class="btn btn-add">
-                        <a class="offer-link" href="#">В ИЗБРАННОЕ</a>
-                      </button>
-                    </p>                
+                      </a>
+                      <button class="button btn-add">В ИЗБРАННОЕ</button>
+                    </div>                  
                     <div class="offer-rating">
-                        <div class="rating-star">
-                          <img class="star" src="images/icons/aster.svg" 
-                          width="18" height="17" alt="звезда рейтинга">
-                        </div>
+                        <div class="rating-star"></div>
                         <div class="table-rating">Рейтинг: 9,2</div>
-                      </div>                 
+                    </div>                 
                 </li>              
                 <li class="offer-item">
-                  <a class="offer-item-link" href="http://(address of hotel)">
+                  <a class="offer-item-link" href="http://address_of_hotel">
                     <img class="hotel-image" src="images/foto/hotel-4.jpg" alt="вид месности">
                     <h3 class="offer-item-title">GreenTree Inn</h3>               
                       <span class="offer-appartment">Гостиница</span>
                       <span class="offer-price">от 3000 &#8381;</span>                 
                   </a>
-                  <p class="offer-item-p">
-                     <button class="btn btn-offer" href="http://(address of hotel)">
+                  <div class="offer-item-buttons">
+                      <a class="button btn-go-to" href="http://address_of_hotel">
                         ПОДРОБНЕЕ
-                      </button>
-                      <button class="btn btn-add">
-                        <a class="offer-link" href="#">В ИЗБРАННОЕ</a>
-                      </button>
-                   </p>                
+                      </a>
+                      <button class="button btn-add">В ИЗБРАННОЕ</button>
+                    </div>                  
                     <div class="offer-rating">
-                        <div class="rating-star">
-                          <img class="star" src="images/icons/aster.svg" 
-                          width="18" height="17" alt="звезда рейтинга">
-                        </div>
+                        <div class="rating-star"></div>
                         <div class="table-rating">Рейтинг: 9,2</div>
-                      </div>              
+                    </div>              
                 </li>
               </ul>
-              <button class="btn btn-more">              
+              <button class="button btn-more">              
                 <span class="offer-more-title">Загрузить ещё</span>
               </button>
            </section>
            <!--the end offer-->
            <section class="pagination">
-            <ul class="pagination-list">
-              <li class="pagination-item">
-                <a class="pagination-link pagination-current">1</a>
-              </li>
-              <li class="pagination-item">
-                <a class="pagination-link" href="#">2</a>
-              </li>
-              <li class="pagination-item">
-                <a class="pagination-link" href="#">3</a>
-              </li>
-              <li class="pagination-item">
-                <a class="pagination-link" href="#">4</a>
-              </li>
-              <li class="pagination-item">
-                <a class="pagination-link refs-more" href="#">&hellip;</a><!--название доп.кл?-->
-              </li>
-              <li class="pagination-item">
-                <a class="pagination-link" href="#">10</a>
-              </li>              
-            </ul>
-            <form class="pagination-select">
-              <label class="visually-hidden" for="pagination-select">Гостиниц на странице:</label>
-              <select class="select-control" id="pagination-select" name="pagination-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-              <button class="visually-hidden" type="submit">Выбрать количество</button>
-            </form>
+			  <h2 class="visually-hidden">навигация по страницам</h2>
+				<ul class="pagination-list">
+				  <li class="pagination-item">
+					<a class="pagination-link pagination-current">1</a>
+				  </li>
+				  <li class="pagination-item">
+					<a class="pagination-link" href="#">2</a>
+				  </li>
+				  <li class="pagination-item">
+					<a class="pagination-link" href="#">3</a>
+				  </li>
+				  <li class="pagination-item">
+					<a class="pagination-link" href="#">4</a>
+				  </li>
+				  <li class="pagination-item">
+					<a class="pagination-link refs-more" href="#">&hellip;</a><!--название доп.кл?-->
+				  </li>
+				  <li class="pagination-item">
+					<a class="pagination-link" href="#">10</a>
+				  </li>              
+				</ul>
+				<form class="pagination-select">
+				  <label class="visually-hidden" for="pagination-select">Гостиниц на странице:</label>
+				  <select class="select-control" id="pagination-select" name="pagination-select">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				  </select>
+				  <button class="visually-hidden" type="submit">Выбрать количество</button>
+				</form>
            </section>
             <!--the end pagination-->
           <section class="catalog-mailing">
@@ -317,14 +292,14 @@
               честное бойскаутское!</p>
               <form class="mailing-form" action="#" method="get">
                 <input class="mailing-text" type="email" name="email" placeholder="Ваш e-mail">
-                <input class="btn btn-mailing" type="submit" value="Подписаться">
+                <input class="button btn-mailing" type="submit" value="Подписаться">
               </form>
           </section>
           <!--the end mailing-->
         </main>
         
         <footer class="page-footer">
-          <section class="footer-social">
+          <div class="footer-social">
             <h2 class="visually-hidden">социальные сети</h2>
               <ul class="footer-social-list">
                 <li class="footer-social-item">
@@ -339,15 +314,15 @@
                 </li>
                   <li class="footer-social-item">
                     <a class="button" href="#">
-                      <span class="visually-hidden"></span>Инстаграм</span>
+                      <span class="visually-hidden">Инстаграм</span>
                     </a>
                 </li>
               </ul>            
-          </section>  
+          </div>
           <!--the end footer-social-->
           <div class="footer-contact">
             <h2 class="visually-hidden">Номер телефона</h2>
-            <a class="footer-contact-phone" href="tel:+7 (812) 812-12-12">+7 (812) 812-12-12</a>        
+            <a class="footer-contact-phone" href="tel:+7(812)812-12-12">+7(812)812-12-12</a>        
           </div>      
           <figure class="footer-logo">
             <img class="footer-logo-academy" src="images/icons/logo_htmlacademy.svg" 
