@@ -1,0 +1,64 @@
+
+@font-face{
+    font-family: "PT sans","Arial", sans-serif;    
+    font-weight: 400;
+    font-style: normal;
+   src: url(../fonts/ptsans-400.woff2) format(woff2);
+    font-display: swap;
+}
+
+@font-face{
+    font-family: "PT sans","Arial", sans-serif;    
+    font-weight: 700;
+    font-style: normal;
+    src: url(../fonts/ptsans-700.woff2) format(woff2);
+    font-display: swap;
+}
+
+body{
+    font-family: "PT sans", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    color: #333333;
+    background-color: #E5E5E5;
+}
+
+.wrap-figure{
+    background-image: url(../images/foto/bgtop.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.wrap-figure::after{
+    content: "";
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    background-image: url(../images/icons/divider.svg);
+}
+.wrap-title{
+    background-color: #fff;
+}
+
+.mailing{
+    background-image: url(../images/foto/bg-mailing.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    color:#fff;
+}
+ 
+/* ctalog */
+.catalog{
+    background-color: white;
+    color: black;
+}
+.filter-container{
+    background-image: url(../images/foto/bg-search-filer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+
