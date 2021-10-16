@@ -1,4 +1,3 @@
-
 @font-face{
     font-family: "PT sans","Arial", sans-serif;    
     font-weight: 400;
@@ -22,43 +21,281 @@ body{
     color: #333333;
     background-color: #E5E5E5;
 }
+.button{
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border-radius: 4px;
+    height: 37px;
+    display: inline-block;
+}
+.btn-go-to, .search-button{
+    background-color: #756257;    
+}
+.btn-mailing, .btn-add, .btn-sub, .btn-more{
+    background: #83B3D3;
+    border: none;
+}
+.btn-mailing, .search-button{
+    font-weight: 700;
+    font-size: 20px;
+    height: 60px;
+}
+.search-button{
+width: 575px;
+line-height: 36px;
+border-radius: 10px;
+}
+.btn-mailing{
+    width: 200px;
+    line-height: 26px;
+    border-radius: 0px 10px 10px 0px;
+}
+.btn-go-to{
+    width: 151px;
+    line-height: 36px;
+}
+.btn-add, .btn-sub{
+    width: 160px;    
+}
+.btn-sub{
+    height: 48px;
+}
+.btn-reset{
+    background-color: transparent;
+    border: none;
+}
+.btn-more{
+    width: 625px;
+    height: 55px;
+}
 
+
+/* header */
+.page-header {
+    color: #000;
+    background-color: #fff;    
+}
+
+.navigation-link, .user-servis__link{
+    font-family: inherit, sans-serif; /*если font-family в макете единственный и указан в body,
+   значит в следующих слекторах его можно не указывать???*/
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+}
+/* section main-top */
 .wrap-figure{
     background-image: url(../images/foto/bgtop.jpg);
     background-size: 100% auto;
     background-repeat: no-repeat;
     position: relative;
 }
-.wrap-figure::after{
-    content: "";
-    position: absolute;
-    bottom:0;
-    left: 0;
-    width: 100%;
-    height: 54px;
-    background-image: url(../images/icons/divider.svg);
+h1, h2, h3, p{
+    text-align: center;
+    font-style: normal;
 }
-.wrap-title{
+ul{
+    list-style: none;
+}
+.main-top-title{
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: #000;
+  }
+.main-top-caption{   
+   font-weight: 400;
+   font-size: 22px;
+   line-height: 36px;
+   color: #333333;/* должен быть унаследован от body??? */
+}
+/* section advantages */
+.advantages .advantages-item__white{
+    color:#fff;
+}
+.advantages-title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+.advantages-description, .advantages-namber{
+    font-weight: 400;    
+}
+.advantages-item{
+    background-color: #83B3D3;
+}
+.advantages-item:nth-child(2n){
+    background-color: rgba(131, 179, 211, .12);
+}
+.advantages-item:nth-child(9){
+    background-color: rgba(131, 179, 211, .2);
+}
+.main-search, .wrap-title, .page-footer,.advantages-item:nth-child(3){
     background-color: #fff;
 }
-
+/* section main-search */
+.main-search-title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+}
+.main-search-caption{
+ font-size: 22px;
+line-height: 26px;
+}
+/* mailing */
 .mailing{
     background-image: url(../images/foto/bg-mailing.jpg);
     background-size: 100% auto;
     background-repeat: no-repeat;
     color:#fff;
 }
- 
+.mailing-title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;  
+}
+.mailing-caption{
+    font-size: 22px;
+    line-height: 26px;
+}
+.mailing-text{
+    width: 600px;
+    height: 60px;
+    border-radius:  10px 0px  0px 10px;
+    border: none;
+    background: #F2F2F2;
+}
+input[placeholder]{
+    font-size: inherit;
+    line-height: 26px;
+    padding-left: 22px;
+}
+
+.footer-contact{
+    text-align: center;
+}
+
+.footer-contact-phone{
+    font-size: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+}
 /* ctalog */
 .catalog{
     background-color: white;
     color: black;
 }
+/* catalog-search */
 .filter-container{
     background-image: url(../images/foto/bg-search-filer.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
 }
-
-
+.catalog-header-title{
+    font-size: 60px;
+    line-height: 78px;
+    text-align: left;
+}
+.breadcrumbs-item{
+    font-size: 16px;
+}
+.catalog-filter-title{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+}
+.control-label{
+    line-height: 23px;
+}
+/* sorting */
+.sorting-title{
+font-weight: 700;
+font-size: 30px;
+line-height: 39px;
+text-transform: uppercase;
+text-align: left;
+}
+.select-control{
+    width: 287px;
+    height: 48px;
+}
+/* offer */
+.offer-item-link{
+    text-decoration: none;
+    color: #000;
+}
+.offer-item-title{
+    font-size: 24px;
+    line-height: 31px;    
+}
+.offer-item span{
+    line-height: 23px;
+    color: #333333;
+}
+.rating-star{
+    position: relative;
+    height: 17px;
+}
+.rating-star::after{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 17px;
+    background-image: url(../images/icons/aster.svg);
+}
+.table-rating{
+    width: 160px;
+    height: 37px;
+    font-size: 16px;
+    line-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    color:#333;
+    background: #F2F2F2;
+    border-radius: 4px;
+}
+.offer-item:first-child .rating-star::after{
+    width: 72px;
+}
+.offer-item:nth-child(2) .rating-star::after{
+    width: 54px;
+}
+.offer-item:nth-child(n+3) .rating-star::after{
+    width: 36px;
+}
+/* pagination */
+.pagination-link{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 55px;
+    color: #000;
+    background-color: #83B3D3;
+    text-align: center;
+    text-decoration: none;
+}
+.pagination-current{
+    background-color: #F2F2F2;
+}
+.select-control{
+    width: 160px;
+    height: 48px;
+    border: 2px solid #E6E6E6;
+    border-radius: 4px;
+}
