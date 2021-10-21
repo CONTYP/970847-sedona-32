@@ -6,40 +6,40 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-      <div class="container catalog">
-        <header class="page-header">
-            <nav class="navigation">
-              <ul class="navigation-list">
-                <li class="navigation-item">
-                  <a class="navigation-link" href="#">Главная</a>
-                </li>
-                <li class="navigation-item">
-                  <a class="navigation-link" href="about.html">О Седоне</a>
-                </li>
-                <li class="navigation-item">
-                  <a class="navigation-link" href="catalog.html">Гостиницы</a>
-                </li>
-              </ul>
-            </nav>   
-                <a class="navigation-link" href="index.html">
-                    <img class="navigation-logo" src="images/icons/logo-sedona.svg"
-                     width="138" height="70" alt="логотип города Сидона">
-                </a>          
-              <div class="user-servis__searh">
-                <a class="user-servis__link" href="#">
-                  <span class="visually-hidden">Поиск</span>
-                </a>
-              </div>
-              <div class="user-servis__basket">
-                <a class="user-servis__link" href="#">
-                  <span class="visually-hidden">Избранное</span></a>
-              </div>
-              <div class="user-servis__entry">
-                <a class="user-servis__link btn-go-to" href="#">Хочу сюда!</a>
-              </div>        
-        </header>
+    <div class="container catalog">
+      <header class="page-header">
+        <nav class="navigation">
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <a class="navigation-link" href="#">Главная</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link" href="about.html">О Седоне</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link" href="catalog.html">Гостиницы</a>
+            </li>
+          </ul>
+        </nav> 
+            <a class="navigation-link" href="index.html"> 
+                <img class="navigation-logo" src="images/icons/logo-sedona.svg" alt="логотип города Сидона">
+            </a>
+        <div class="user-servis">              
+            <div class="user-servis-item">
+              <a class="user-servis-link" href="#">
+                <span class="visually-hidden">Поиск</span></a>
+            </div>
+            <div class="user-servis-item">
+              <a class="user-servis-link" href="#">
+                <span class="visually-hidden">Избранное</span></a>
+            </div>
+            <div class="user-servis-item">
+              <a class="button btn-go-to" href="#">Хочу сюда!</a>
+            </div>
+        </div>     
+      </header>
           <!--the end header-->
-        <main class="main-inner">
+        <main class="main-inner main-container">
           <section class="catalog-search">
             <div class="filter-container">
               <header class="catalog-header">
@@ -90,7 +90,7 @@
                         <li class="catalog-filter-item">
                           <label class="control">
                             <input class="visually-hidden control-input" type="radio"
-                            name="type appartment" value="hotel" checked>
+                              name="type appartment" value="hotel" checked>
                               <span class="control-mark"></span>
                               <span class="control-label">Гостиница</span>
                           </label>
@@ -118,8 +118,8 @@
                       <!--символ не отображается??? в укоке появление рубля не объясняется-->
                       <label class="catalog-filter-label">
                         <input class="catalog-filter-input" type="number" name="min-price"
-                      value="0">от</label>
-                      <label class="catalog-filter-label">
+                        value="0">от</label>
+                        <label class="catalog-filter-label">
                         <input class="catalog-filter-input" type="number" name="max-price"
                         value="9000">до</label>
                         <button class="range-toggle toggle-min" type="button">
@@ -129,7 +129,7 @@
                           <span class="visually-hidden">Изменить максимальную цену.</span>
                         </button>
                     </fieldset>  
-                        <input class="button btn-add" type="submit" name="submit" value="Применить">
+                        <input class="button btn-sub" type="submit" name="submit" value="Применить">
                         <input class="button btn-reset" type="reset" value="Сбросить">
                   </form>
             </div>
@@ -269,8 +269,8 @@
 				  </li>              
 				</ul>
 				<form class="pagination-select">
-				  <label class="visually-hidden" for="pagination-select">Гостиниц на странице:</label>
-				  <select class="select-control" id="pagination-select" name="pagination-select">
+				  <label class="pagination-control" for="pagination-select">Гостиниц на странице:</label>
+				  <select class="select-control" id="ptagination-select" name="pagination-select">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -297,38 +297,35 @@
           </section>
           <!--the end mailing-->
         </main>
-        
         <footer class="page-footer">
-          <div class="footer-social">
-            <h2 class="visually-hidden">социальные сети</h2>
+          <div class="footer-social">            
               <ul class="footer-social-list">
                 <li class="footer-social-item">
-                  <a class="button" href="#">
+                  <a class="footer-social-link" href="#">
                     <span class="visually-hidden">Твиттер</span>
                   </a>
                 </li>
                 <li class="footer-social-item">
-                  <a class="button" href="#">
+                  <a class="footer-social-link" href="#">
                     <span class="visually-hidden">Фесбук</span>
                   </a>
                 </li>
                   <li class="footer-social-item">
-                    <a class="button" href="#">
-                      <span class="visually-hidden">Инстаграм</span>
+                    <a class="footer-social-link" href="#">
+                      <span class="visually-hidden">Ютъюб</span>
                     </a>
                 </li>
               </ul>            
           </div>
           <!--the end footer-social-->
-          <div class="footer-contact">
-            <h2 class="visually-hidden">Номер телефона</h2>
-            <a class="footer-contact-phone" href="tel:+7(812)812-12-12">+7(812)812-12-12</a>        
-          </div>      
-          <figure class="footer-logo">
-            <img class="footer-logo-academy" src="images/icons/logo_htmlacademy.svg" 
-            width="115" height="34" alt="Логотип HTML-Академии">
-          </figure>
-        </footer>
-      </div>
+            <div class="footer-contact">               
+              <a class="footer-contact-phone" href="tel:+7(812)812-12-12">+7(812)812-12-12</a>        
+            </div>      
+            <figure class="footer-logo">
+              <img class="footer-logo-academy" src="images/icons/logo_htmlacademy.svg" 
+              width="115" height="34" alt="Логотип HTML-Академии">
+            </figure>
+      </footer>   
+    </div>     
   </body>
 </html>
