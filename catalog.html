@@ -24,16 +24,16 @@
             <a class="navigation-link" href="index.html"> 
                 <img class="navigation-logo" src="images/icons/logo-sedona.svg" alt="логотип города Сидона">
             </a>
-        <div class="user-servis">              
-            <div class="user-servis-item">
-              <a class="user-servis-link" href="#">
+        <div class="user-menu">              
+            <div class="user-menu-item">
+              <a class="user-menu-link" href="#">
                 <span class="visually-hidden">Поиск</span></a>
             </div>
-            <div class="user-servis-item">
-              <a class="user-servis-link" href="#">
+            <div class="user-menu-item">
+              <a class="user-menu-link" href="#">
                 <span class="visually-hidden">Избранное</span></a>
             </div>
-            <div class="user-servis-item">
+            <div class="user-menu-item">
               <a class="button btn-go-to" href="#">Хочу сюда!</a>
             </div>
         </div>     
@@ -113,7 +113,7 @@
                         </li>
                       </ul>
                     </fieldset>
-                    <fieldset class="catalog-filter-gorup">
+                    <fieldset class="catalog-filter-group">
                       <legend class="catalog-filter-title">Стоимость,&#8381;:</legend>
                       <!--символ не отображается??? в укоке появление рубля не объясняется-->
                       <label class="catalog-filter-label">
@@ -128,123 +128,154 @@
                         <button class="range-toggle toggle-max" type="button">
                           <span class="visually-hidden">Изменить максимальную цену.</span>
                         </button>
-                    </fieldset>  
+                    </fieldset>
+                    <div class="box-button">  
                         <input class="button btn-sub" type="submit" name="submit" value="Применить">
                         <input class="button btn-reset" type="reset" value="Сбросить">
+                      </div>
                   </form>
             </div>
           </section>
           <!--the end catalog-search-->
           <section class="sorting">
-            <h2 class="sorting-title">Найдено гостиниц:<span class="result">38</span></h2>
-              <form class="sorting-type">
-                <label class="visually-hidden" for="sorting">Сортировка</label>
-                <select class="select-control" id="sorting" name="sorting">
-                  <option value="popular">Сначала популярные</option>
-                  <option value="cheap">Сначала недорогие</option>
-                  <option value="expensive">Сначала дорогие</option>
-                </select>
-                <button class="visually-hidden" type="submit">Отсортировать предложения</button>
-              </form>
-              <ul class="sorting-list">
-                <li class="sorting-item">
-                  <a href="#" class="button button-light">
-                    <span class="visually-hidden">Показать список</span>
-                  </a>
-                </li>
-                <li class="sorting-item">
-                  <a href="#" class="button">
-                    <span class="visually-hidden">Показать карточки</span>
-                  </a>
-                </li>
-                <li class="sorting-item">
-                  <a href="#" class="button">
-                    <span class="visually-hidden">Показать карточки</span>
-                  </a>
-                </li>
-              </ul>
+            <div class="sorting-container">
+              <h2 class="sorting-title">Найдено гостиниц:<span class="result">38</span></h2>
+                <form class="sorting-type">
+                  <label class="visually-hidden" for="sorting">Сортировка</label>
+                  <select class="sorting-select-control" id="sorting" name="sorting">
+                    <option value="popular">Сначала популярные</option>
+                    <option value="cheap">Сначала недорогие</option>
+                    <option value="expensive">Сначала дорогие</option>
+                  </select>
+                  <button class="visually-hidden" type="submit">Отсортировать предложения</button>
+                </form>
+                <ul class="sorting-list">
+                  <li class="sorting-item">
+                    <a href="#" class="button button-light">
+                      <span class="visually-hidden">Показать список</span>
+                    </a>
+                  </li>
+                  <li class="sorting-item">
+                    <a href="#" class="button">
+                      <span class="visually-hidden">Показать карточки</span>
+                    </a>
+                  </li>
+                  <li class="sorting-item">
+                    <a href="#" class="button">
+                      <span class="visually-hidden">Показать карточки</span>
+                    </a>
+                  </li>
+                </ul>
+            </div>
           </section>
            <!--the end sorting-->           
-           <section class="offer">
-             <h2 class="visually-hidden">Список предложений</h2>
-             <ul class="offer-list">
-               <li class="offer-item">
-                    <a class="offer-item-link" href="http://address_of_hotel">
-                      <img class="hotel-image" src="images/foto/hotel-1.jpg" alt="вид месности">
-                      <h3 class="offer-item-title">Amara Resort & Spa</h3>               
-                        <span class="offer-appartment">Гостиница</span>
-                        <span class="offer-price">от 4000 &#8381;</span>
-                    </a>                 
-                    <div class="offer-item-buttons">
-                      <a class="button btn-go-to" href="http://address_of_hotel">
-                        ПОДРОБНЕЕ
-                      </a>
-                      <button class="button btn-add">В ИЗБРАННОЕ</button>
-                    </div>                  
-                    <div class="offer-rating">
-                        <div class="rating-star"></div>
-                        <div class="table-rating">Рейтинг: 8,5</div>
-                    </div>
-                </li>
+          <section class="offer">
+            <div class="offer-container">
+              <h2 class="visually-hidden">Список предложений</h2>
+              <ul class="offer-list">
                 <li class="offer-item">
+                      <a class="offer-item-link" href="http://address_of_hotel">
+                        <img class="hotel-image" src="images/foto/hotel-1.jpg" alt="вид месности">
+                      </a>
+                      <div class="offer-title-box"> 
+                          <h3 class="offer-item-title">Amara Resort & Spa</h3>               
+                            <span class="offer-appartment">Гостиница</span>
+                            <span class="offer-price">от 4000 &#8381;</span>                                        
+                          <div class="offer-item-buttons">
+                              <a class="button btn-go-to" href="http://address_of_hotel">
+                                ПОДРОБНЕЕ
+                              </a>
+                              <button class="button btn-add">В ИЗБРАННОЕ</button>
+                          </div>
+                      </div>                
+                      <div class="offer-rating">
+                          <ul class="rating-star-list">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                          </ul>
+                          <div class="table-rating">Рейтинг: 8,5</div>
+                      </div>
+                  </li>
+                  <li class="offer-item">
+                      <a class="offer-item-link" href="http://address_of_hotel">
+                        <img class="hotel-image" src="images/foto/hotel-2.jpg" alt="вид месности">
+                      </a>
+                      <div class="offer-title-box">
+                        <h3 class="offer-item-title">Desert Quail Inn</h3>               
+                            <span class="offer-appartment">Мотель</span>
+                            <span class="offer-price">от 3000 &#8381;</span>                      
+                          <div class="offer-item-buttons">
+                            <a class="button btn-go-to" href="http://address_of_hotel">
+                              ПОДРОБНЕЕ
+                            </a>
+                            <button class="button btn-add">В ИЗБРАННОЕ</button>
+                          </div>
+                      </div>                  
+                      <div class="offer-rating">
+                          <ul class="rating-star-list">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                          </ul>
+                          <div class="table-rating">Рейтинг: 8,9</div>
+                      </div>                                 
+                  </li>
+                  <li class="offer-item">
+                      <a class="offer-item-link" href="http://address_of_hotel">
+                        <img class="hotel-image" src="images/foto/hotel-3.jpg" alt="вид месности">
+                      </a>
+                        <div class="offer-title-box">
+                            <h3 class="offer-item-title">Villas at Poco Diablo</h3>               
+                              <span class="offer-appartment">Апартометны</span>
+                              <span class="offer-price">от 2000 &#8381;</span>                                              
+                            <div class="offer-item-buttons">
+                              <a class="button btn-go-to" href="http://address_of_hotel">
+                                ПОДРОБНЕЕ
+                              </a>
+                              <button class="button btn-add">В ИЗБРАННОЕ</button>
+                            </div>
+                        </div>                  
+                          <div class="offer-rating">
+                              <ul class="rating-star-list">
+                                <li></li>
+                                <li></li>
+                              </ul>
+                              <div class="table-rating">Рейтинг: 9,2</div>
+                          </div>              
+                  </li>              
+                  <li class="offer-item">
                     <a class="offer-item-link" href="http://address_of_hotel">
-                      <img class="hotel-image" src="images/foto/hotel-2.jpg" alt="вид месности">
-                      <h3 class="offer-item-title">Desert Quail Inn</h3>               
-                        <span class="offer-appartment">Мотель</span>
-                        <span class="offer-price">от 3000 &#8381;</span>                   
+                      <img class="hotel-image" src="images/foto/hotel-4.jpg" alt="вид месности">
                     </a>
-                    <div class="offer-item-buttons">
-                      <a class="button btn-go-to" href="http://address_of_hotel">
-                        ПОДРОБНЕЕ
-                      </a>
-                      <button class="button btn-add">В ИЗБРАННОЕ</button>
-                    </div>                  
-                    <div class="offer-rating">
-                        <div class="rating-star"></div>
-                        <div class="table-rating">Рейтинг: 8,9</div>
-                    </div>                                 
-                </li>
-                <li class="offer-item">
-                    <a class="offer-item-link" href="http://address_of_hotel">
-                      <img class="hotel-image" src="images/foto/hotel-3.jpg" alt="вид месности">
-                      <h3 class="offer-item-title">Villas at Poco Diablo</h3>               
-                        <span class="offer-appartment">Апартометны</span>
-                        <span class="offer-price">от 2000 &#8381;</span>                   
-                    </a>
-                    <div class="offer-item-buttons">
-                      <a class="button btn-go-to" href="http://address_of_hotel">
-                        ПОДРОБНЕЕ
-                      </a>
-                      <button class="button btn-add">В ИЗБРАННОЕ</button>
-                    </div>                  
-                    <div class="offer-rating">
-                        <div class="rating-star"></div>
-                        <div class="table-rating">Рейтинг: 9,2</div>
-                    </div>                 
-                </li>              
-                <li class="offer-item">
-                  <a class="offer-item-link" href="http://address_of_hotel">
-                    <img class="hotel-image" src="images/foto/hotel-4.jpg" alt="вид месности">
-                    <h3 class="offer-item-title">GreenTree Inn</h3>               
-                      <span class="offer-appartment">Гостиница</span>
-                      <span class="offer-price">от 3000 &#8381;</span>                 
-                  </a>
-                  <div class="offer-item-buttons">
-                      <a class="button btn-go-to" href="http://address_of_hotel">
-                        ПОДРОБНЕЕ
-                      </a>
-                      <button class="button btn-add">В ИЗБРАННОЕ</button>
-                    </div>                  
-                    <div class="offer-rating">
-                        <div class="rating-star"></div>
-                        <div class="table-rating">Рейтинг: 9,2</div>
-                    </div>              
-                </li>
-              </ul>
-              <button class="button btn-more">              
-                <span class="offer-more-title">Загрузить ещё</span>
-              </button>
-           </section>
+                      <div class="offer-title-box">
+                        <h3 class="offer-item-title">GreenTree Inn</h3>               
+                          <span class="offer-appartment">Гостиница</span>
+                          <span class="offer-price">от 3000 &#8381;</span>                     
+                            <div class="offer-item-buttons">
+                              <a class="button btn-go-to" href="http://address_of_hotel">
+                                ПОДРОБНЕЕ
+                              </a>
+                              <button class="button btn-add">В ИЗБРАННОЕ</button>
+                            </div>
+                      </div>                  
+                      <div class="offer-rating">
+                          <ul class="rating-star-list">
+                            <li></li>
+                            <li></li>
+                          </ul>
+                          <div class="table-rating">Рейтинг: 9,2</div>
+                      </div>              
+                  </li>
+                </ul>
+                
+                  <button class="button btn-more">              
+                    <span class="offer-more-title">Загрузить ещё</span>
+                  </button>
+                
+            </div>
+        </section>
            <!--the end offer-->
            <section class="pagination">
 			  <h2 class="visually-hidden">навигация по страницам</h2>
