@@ -1,5 +1,5 @@
 @font-face{
-    font-family: "PT sans","Arial", sans-serif;    
+    font-family: "PT sans", sans-serif;    
     font-weight: 400;
     font-style: normal;
    src: url(../fonts/ptsans-400.woff2) format(woff2);
@@ -7,7 +7,7 @@
 }
 
 @font-face{
-    font-family: "PT sans","Arial", sans-serif;    
+    font-family: "PT sans", sans-serif;  
     font-weight: 700;
     font-style: normal;
     src: url(../fonts/ptsans-700.woff2) format(woff2);
@@ -39,12 +39,12 @@ body{
     overflow: hidden;
 }
 .container,
-.page-header,
+.page-header-container,
 .navigation, 
 .navigation-list, 
 .user-menu,
 .main-top-figure,
-.page-footer,
+.page-footer-container,
 .footer-social,
 .footer-social-list,
 .pagination,
@@ -82,6 +82,8 @@ body{
     border-radius: 4px;
     height: 37px;
     display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 .btn-go-to, .search-button{
     background-color: #756257;    
@@ -138,10 +140,21 @@ ul{
 .page-header,  .page-footer{
     color: #000;
     background-color: #fff;
-    justify-content: space-between;
-    padding: 0 70px;
 }
-
+.page-header-container, .page-footer-container{
+    max-width: 1060px;    
+    margin: 0 auto;
+    justify-content: space-between;    
+}
+.page-header-container{
+    height: 70px;
+    position: relative;
+}
+.page-header-container img{
+    position: absolute;
+    top: 0;
+    left: 43.5%;
+}
 .navigation-link, .user-menu-link{
     font-size: 20px;
     line-height: 26px;
@@ -155,31 +168,16 @@ ul{
 .navigation-item + .navigation-item{
     margin-left: 33px;
 }
-.user-menu .user-menu-link{
-    width: 60px;
-    height: 40px;
-    position: relative;
-}
-
-.user-menu-item:first-child .user-menu-link::after{
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    height: 20px;
-    width: 20px;
-    background-image:url(../images/icons/search-icon.svg);
-    background-repeat: no-repeat;
-}
-.user-menu-item:nth-child(2) .user-menu-link::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 31px;
+.user-menu-item:nth-child(2){
     width: 31px;
-    background-image:url(../images/icons/chosen-icon.svg);
-    background-repeat: no-repeat;
+    height: 27px;
+    margin-right: 20px;
+    margin-bottom: 10px;  
+}
+.user-menu-item:first-child{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;    
 }
 
 /* section main-top */
@@ -377,53 +375,46 @@ input[placeholder]{
     padding-left: 22px;
 }
 /* footer */
-
+.page-footer-container{
+    min-height: 120px;
+}
 .footer-social-link{
     position: relative;
     width: 40px;
     height: 42px;
     display: block;
 }
-.footer-social-item:first-child .footer-social-link::after{
+.footer-social-item .footer-social-link::after{
     content: "";
     position: absolute;
     top: 10px;
     left: 10px;
     height: 20px;
     width: 20px;
-    background-image:url(../images/icons/twitter-icon.svg);
     background-repeat: no-repeat;
+}
+.footer-social-item:first-child .footer-social-link::after{
+    background-image:url(../images/icons/twitter-icon.svg);
 }
 .footer-social-item:nth-child(2) .footer-social-link::after{
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    height: 20px;
-    width: 20px;
     background-image:url(../images/icons/facebook-icon.svg);
-    background-repeat: no-repeat;
 }
 .footer-social-item:last-child .footer-social-link::after{
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    height: 20px;
-    width: 20px;
     background-image:url(../images/icons/youtybe-icon.svg);
-    background-repeat: no-repeat;
 }
-
 .footer-contact{
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 .footer-contact-phone{
     font-size: 40px;
     line-height: 40px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #000;
+    color: #000;    
+}
+.footer-logo{
+    margin: auto 0;
 }
 /* ctalog */
 .catalog{
@@ -553,12 +544,10 @@ margin-right: 190px;
     height: 17px;
     width: 17px;
     margin-right: 7px;
+    background-image: url(../images/icons/aster.svg);
 }
 .rating-star-list li:last-child{
     margin-right: 0;
-}
-.rating-star-list li::after{
-    content: url(../images/icons/aster.svg);
 }
 .table-rating{
     width: 160px;
