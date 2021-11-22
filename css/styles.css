@@ -1,25 +1,25 @@
+
 @font-face{
-    font-family: "PT sans", sans-serif;    
+    font-family: "PT sans";    
     font-weight: 400;
     font-style: normal;
-   src: url(../fonts/ptsans-400.woff2) format(woff2);
+    src: url(../fonts/ptsans-400.woff2) format("woff2");
     font-display: swap;
 }
 
 @font-face{
-    font-family: "PT sans", sans-serif;  
+    font-family: "PT sans";  
     font-weight: 700;
     font-style: normal;
-    src: url(../fonts/ptsans-700.woff2) format(woff2);
+    src: url(../fonts/ptsans-700.woff2) format("woff2");
     font-display: swap;
 }
-.html, body{
+.html{
     height: 100%;
 }
 body{
     margin: 0 auto;
     padding: 0;
-    border-left: 1px solid green; border-right:1px solid green;/*vremenno*/
     min-height: 100%;
     max-width: 1280px;    
     font-family: "PT sans", sans-serif;
@@ -54,7 +54,6 @@ ul{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    border-left:1px solid red; border-right:1px solid red;/*vremenno*/
 }
 .button{
     font-family: inherit;
@@ -74,7 +73,8 @@ ul{
 .btn-go-to, .search-button{
     background-color: #756257;
 }
-.btn-mailing, .btn-add, .btn-sub, .btn-more{
+.btn-mailing, .btn-add, .btn-sub, .btn-more,
+.btn-modal-saerch{
     background-color: #83B3D3;
 }
 .btn-go-to{
@@ -86,7 +86,8 @@ ul{
     font-size: 20px;
     height: 60px;
 }
-.search-button{
+.search-button,
+.btn-modal-saerch{
 width: 575px;
 line-height: 36px;
 border-radius: 10px;
@@ -111,23 +112,45 @@ border-radius: 10px;
     height: 55px;
     margin: 0 auto 30px;
 }
+.btn-old-add{
+    width: 400px;
+    height: 60px;
+    border-radius: 0 0 20px 20px;
+    background-color: #756257;
+}
 /* состояния */
 .btn-go-to:hover, .search-button:hover{
     background-color: #615048;
 }
 .btn-mailing:hover, .btn-add:hover,
-.btn-sub:hover, .btn-more:hover{
+.btn-sub:hover, .btn-more:hover,
+.pagination-link:hover,
+.btn-modal-saerch{
     background-color:  #68A2CA;
 }
 .btn-reset:hover{
     color:rgba(255, 255, 255, 0.6);
 }
-.btn-go-to:focus, .search-button:focus, .btn-reset:focus{
+.btn-go-to:focus, .search-button:focus,
+.btn-reset:focus{
     outline:3px solid #83B3D3;
 }
 .btn-mailing:focus, .btn-add:focus,
-.btn-sub:focus, .btn-more:focus{
+.btn-more:focus, .pagination-link:focus,
+.btn-modal-saerch:focus{
     outline: 3px solid #756257;
+    background-color: #68A2CA;
+}
+}
+.btn-sub:focus{
+    outline: 3px solid #fff;
+    background-color: #68A2CA;
+}
+.btn-mailing:active, .btn-add:active,
+.btn-sub:active, .btn-more:active,
+.pagination-link:active,
+.btn-modal-saerch:active{
+   opacity: 0.6;
 }
 .btn-go-to:active, .search-button:active, .btn-reset:active{
     background-color: #615048;
@@ -139,28 +162,23 @@ border-radius: 10px;
     color: #000;
     background-color: #fff;
 }
-.page-header-container,
-.page-footer-container,
-.sorting-container,
-.offer-container,
-.filter-container{
-    max-width: 1060px;    
-    margin: 0 auto;
+.page-header-container{
     display: flex;
     justify-content: space-between;
-}
-.page-header-container{
+    padding: 0 70px 0 58px;
     min-height: 70px;
     position: relative;
 }
-.page-header-container img{ /* размещение логотипа по-центру */
+.page-header-container .navigation-logo{ /* размещение логотипа по-центру */
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
-.page-header-container > a{
+.page-header-container > a{/*ссылка вокруг логотипа на странице "catalog.html"*/
     width: 138px;
+    height: 66px;
+    padding: 0;
     position: relative;
     right: 50px;
 }
@@ -171,7 +189,7 @@ border-radius: 10px;
 .navigation-list{
     display: flex;
     align-items: center;
-    flex-wrap: wrap;/* на случай переполнения.*/
+    flex-wrap: wrap;
 }
 .navigation-link{
     font-size: 20px;
@@ -183,41 +201,40 @@ border-radius: 10px;
     text-decoration: none;
     padding: 6px 12px;
     display:block;
-    margin-right: 10px;
+}
+.navigation-item:not(:last-child){
+    margin-right: 11px;
 }
 .navigation-item:first-child,
 .navigation-item:last-child{
     position: relative;
 }
-.active::after{
+.active::after{/*указатель активной страницы*/
     content: "";
-    position: absolute;    
-    left: 0;
-    right: 10px;
+    position: absolute;
+    left: 12px;
+    right: 12px;
     bottom: -18px;
     border: 2px solid #756257;
 }
+.user-menu-item{
+    margin-right: 5px;
+}
 .user-menu-link{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 38px;
     height: 38px;
-    position: relative;
 }
 .user-menu-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
     fill: #000;
 }
-.user-menu-item:first-child .user-menu-link{
-    margin-right: 12px;
-}
-.user-menu-item:nth-child(2) .user-menu-link{
-    margin-bottom: 10px;
+.user-menu-item:nth-child(2){
     margin-right: 20px;
+}
+.user-menu-item:nth-child(2) .user-menu-icon{
+   align-self: start;
 }
 .navigation-link:hover{
     color: #756257;
@@ -225,7 +242,7 @@ border-radius: 10px;
 .user-menu-link:hover .user-menu-icon{
     fill: #756257;
 }
-.navigation-link:focus,.user-menu-link:focus{
+.navigation-link:focus, .user-menu-link:focus{
     color: #756257;
     outline:3px solid #83B3D3;
     border-radius: 10px;
@@ -240,6 +257,63 @@ border-radius: 10px;
 .user-menu-link:active .user-menu-icon{
     fill: rgba(117, 98, 87, .3);
 }
+/* popover */
+.user-menu-item:nth-child(2){
+    position: relative;
+}
+.popover-cart{
+    width: 400px;
+    position: absolute;
+    z-index: 2;
+    right: 50%;
+    transform: translateX(50%);
+    top:50px;
+    box-sizing: border-box;
+    border: 1px solid #E6E6E6;
+    box-shadow: 0px 25px 50px;
+    border-radius: 20px;
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    display: none;        
+}
+.popover-open {
+    display: block;
+}
+.popover-cart::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 185px;
+    top: -10px;
+    border-top: 10px solid #fff;
+    border-right: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: rotate(-45deg);
+}
+.popover-content{   
+    padding: 25px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 25px 17px;
+}
+.popover-title{
+    font-weight: bold;
+    text-align: left;
+}
+.popover-appartment{
+    font-size: 16px;
+    color: #333;
+}
+.popover-img{
+    border-radius: 50%;
+}
+.popover-icon:hover{
+    cursor: pointer;
+}
+/* the end popover */
 /** the end header **/
 /* section main-top */
 .main-container{
@@ -290,7 +364,7 @@ border-radius: 10px;
    font-weight: 400;
    font-size: 22px;
    line-height: 36px;
-   margin-bottom: 25px;/* толкаем нижний паддинг, иначе надо задовать высоту блока????*/
+   margin-bottom: 25px;
 }
 /* the end section main-top */
 /* section advantages */
@@ -318,7 +392,6 @@ border-radius: 10px;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-
 }   
 .advantages-item:nth-child(2), .advantages-item:nth-child(6){
 	padding:0;
@@ -347,33 +420,27 @@ border-radius: 10px;
 }
 .advantages-item:nth-child(9){
     background-color: rgba(131, 179, 211, .2);
-}/*
-.advantages-item:nth-child(3),
-.advantages-item:nth-child(4),
-.advantages-item:nth-child(5){
-    разместить контент на нужной позиции?????
-}*/
+}
+.advantages-item:nth-child(3) .advantages-title,
+.advantages-item:nth-child(4) .advantages-title,
+.advantages-item:nth-child(5) .advantages-title{
+   margin-bottom: 20px;
+}
 .advantages-item:nth-child(3)::before,
 .advantages-item:nth-child(4)::before,
 .advantages-item:nth-child(5)::before{
-    content:"";
-    position: absolute;
-    bottom: 223px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75px;
-    height: 76px;
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 23px;
 }
 .advantages-item:nth-child(3)::before{
-    background-image: url(../images/icons/hous-icon.svg);
+    content: url(../images/icons/hous-icon.svg);
 }
-
 .advantages-item:nth-child(4)::before{
-    content: url(../images/icons/burger-icon.svg);
+    content: url(../images/icons/burger-icon.svg);   
 }
 .advantages-item:nth-child(5)::before{
-    background-image: url(../images/icons/present-box-icon.svg);
+    content: url(../images/icons/present-box-icon.svg);
 }
 .advantages-item:nth-child(4){
     background-color: #fff;
@@ -413,7 +480,7 @@ border-radius: 10px;
     font-size: 30px;
     line-height: 36px;
     margin-bottom: 30px;
-}/*в макете отстыпы сверху между надписями в 15 и 25 но сами блоки в два раза шире чем в браузере*/
+}
 .mailing-caption, .catalog-mailing-text{
     font-size: 22px;
     line-height: 26px;
@@ -440,7 +507,7 @@ border-radius: 10px;
     background-color: #E6E6E6;
     outline: 2px solid #000000;
 }
-input[placeholder]{
+.mailing-text[placeholder]{
     font-size: inherit;
     line-height: 26px;
     padding-left: 22px;
@@ -449,12 +516,14 @@ input[placeholder]{
 /* footer */
 .page-footer-container{
     min-height: 120px;
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
 }
 .footer-social, .footer-social-list{
     display: flex;
     align-items: center;
 }
-
 .footer-social-item{
     margin-right: 5px;
 }
@@ -463,20 +532,25 @@ input[placeholder]{
     height: 42px;
     display: block;
     background-color: #fff;
+    position: relative;    
     background-repeat: no-repeat;
     background-position: center;
 }
-.footer-social-twitt{
-    background-image:url(../images/icons/twitter-icon.svg);
-    background-size: 18px 15px;
+.footer-social-icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    fill: #83B3D3;
 }
-.footer-social-facebook{
-    background-image:url(../images/icons/facebook-icon.svg);
-    background-size: 10px 18px;
+.footer-social-link:hover .footer-social-icon{
+    fill: #68A2CA;
 }
-.footer-social-youtube{
-    background-image:url(../images/icons/youtube-icon.svg);
-    background-size: 20px 16px;
+.footer-social-link:active .footer-social-icon{
+    fill: #68A2CA;
+    opacity: 0.3;
 }
 .footer-contact{
     display: flex;
@@ -498,19 +572,156 @@ input[placeholder]{
     display: block;
     padding: 10px;
 }
+.footer-logo-icon{
+    fill: #000;
+}
 .footer-contact-phone:hover{
-    color: #756257;    
+    color: #756257;
+}
+.footer-logo-link:hover .footer-logo-icon{
+    fill:#756257;
 }
 .footer-social-link:focus, .footer-contact-phone:focus,
 .footer-logo-link:focus{
     outline:3px solid #83B3D3;
     border-radius: 10px;
 }
-.footer-contact-phone:active{
-    color: #756257;
-    opacity: 0.3;    
+.footer-contact-phone:active,
+.footer-logo-link:active{
+    opacity: 0.3;
 }
 /* the end footer */
+/* modal window*/
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(242, 242, 242, 0.8);
+}  
+.modal {
+    position: relative;
+    margin: auto;
+    background-color: #FFFFFF;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+}
+.modal-order{
+    box-sizing: border-box;
+    width: 715px;
+    padding: 70px;
+}
+.modal-content-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+.modal-title{
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #000;
+}
+.modal-form-group{
+    margin-bottom: 40px;
+}
+.item-group-row{
+    display: flex;
+    justify-content: space-between;
+}
+.modal-control{
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: left;
+    color: #000000;
+}
+.item-group-wrep{
+    display: flex;
+    width: 420px;
+    flex-wrap: wrap;
+}
+.modal-form-field{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 40px;
+    color: #000;
+    padding: 0 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F2F2F2;
+    flex-grow: 1;
+}
+.modal-input-caption{
+    font-size: 16px;
+    line-height: 29px;    
+}
+.item-group-row:first-child .modal-input-caption{
+    color: #FF5757;
+}
+.modal-form-field[type="number"]{
+    width: 33px;
+    padding: 0;
+}
+.item-group-row:last-child > .modal-control{
+    margin-right: 20px;
+}
+.item-group-row:not(:last-child){
+    margin-bottom: 10px;
+}
+.item-group-row > p{
+    display: flex;
+    width: 133px;
+    height: 50px;
+}
+.form-toggle-plus,
+.form-toggle-minus{
+    padding: 0;
+}
+.form-toggle-plus{
+    border-radius: 4px 0 0 4px;
+}
+.form-toggle-minus{
+    border-radius: 0 4px 4px 0;
+}
+.popover-order{
+    display: block;
+}
+.modal-close-button {
+    width: 53px;
+    height: 53px;
+    padding: 0;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 50%;
+    background-image: url("../images/icons/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.order-info{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #83B3D3;
+    border: none;
+}
+.btn-modal-saerch{
+    height: 80px;    
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+/* the end modal window*/
+/** the end index **/
 /* ctalog */
 .catalog{
     background-color: white;
@@ -525,9 +736,9 @@ input[placeholder]{
     margin-bottom: 45px;/* толкаем sorting вниз*/
 }
 .filter-container{
+    display: flex;
     flex-direction: column;
-    padding-top: 35px;
-    padding-bottom: 85px;
+    padding: 35px 70px 80px 70px;
 }
 /* filter-header */
 .filter-header{
@@ -535,36 +746,37 @@ input[placeholder]{
 }
 .filter-header-title{
     font-size: 60px;
-    line-height: 78px;
+    line-height: 68px;
     text-align: left;
 }
 .breadcrumbs{
 display: flex;
 align-items: center;
+position: relative;
+left: -6px;/* компенсируем padding для outline при фокусе */
 }
 .breadcrumbs-item{
     font-size: 16px;    
-    margin-right: 20px;
+    margin-right: 2px;
 }
-.breadcrumbs-link{
-    position: relative;
-    min-height: 12px;
-    min-width: 12px;
+.breadcrumbs-link{   
     color: #fff;
     text-decoration: none;
-    display: block;
-    padding: 8px;
+    display: flex;    
 }
-
 .breadcrumbs-item:first-child .breadcrumbs-link::before{
-    content: "";
-    position: absolute;
-    top: 7px;
-    left: 5px;
-    height: 12px;
-    width: 12px;
-    background-image: url(../images/icons/home\ 1.svg);
-    background-repeat: no-repeat;
+    content: url(../images/icons/home.svg);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.breadcrumbs-item:nth-child(2)::after{
+    content: url(../images/icons/shevron.svg);
+    display: flex;
+    align-items: center;
+    opacity: .6;
 }
 .breadcrumbs-link:hover{
     opacity: 0.6;
@@ -575,16 +787,6 @@ align-items: center;
 }
 .breadcrumbs-link:active{
     opacity: 0.3;
-}
-.breadcrumbs-item:first-child .breadcrumbs-link::after{
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 35px;
-    height: 8px;
-    width: 8px;
-    background-image: url(../images/icons/shevron.svg);
-    background-repeat: no-repeat;
 }
 .breadcrumbs-item:last-child .breadcrumbs-link{
     padding: 3px 8px;
@@ -600,15 +802,15 @@ align-items: center;
     border: 0;
 }
 .catalog-filter-group:first-child{
-    margin-right: 55px;/* -10px*/
+    margin-right: 67px;
 }
-.catalog-filter-title{ /* на 27рх шире чем в макете */
+.catalog-filter-title{
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
     margin-bottom: 30px;
 }
-.catalog-filter-item{
+.catalog-filter-item:not(:last-child){
     margin-bottom: 16px;
 }
 /* Control */
@@ -626,12 +828,13 @@ align-items: center;
     height: 20px;
     background-color: #FFFFFF;
     border-radius: 4px;
-}
-.control-mark:hover {
-    background-color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
 }
-.control-mark:focus { 
+.catalog-filter-group:first-child .control:hover .control-mark{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.control-input[type="checkbox"]:focus + .control-mark,
+.control-input[type="radio"]:focus + .control-mark{ 
     background-color: rgba(255, 255, 255, 0.6);  
     outline: 3px solid #83B3D3;
 }
@@ -645,64 +848,90 @@ align-items: center;
     bottom: 2px;   
 }
 .catalog-filter-group:nth-child(2){
-    margin-right: 155px;
+    margin-right: 167px;
 }
 .control-input[type="radio"] + .control-mark{
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .control-input[type="radio"]:checked + .control-mark::before{
     content:"";
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translateY(-5px) translateX(-5px);
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: #000;
 }
-/*.control-input[type="radio"]:checked + .control-mark{
-    box-sizing: border-box;
-    border: 5px solid #FFFFFF;
-    background-color: #000;
-} *//* почему так нельзя? проще и короче, фокус через аутлайн */
 .control-label{
     font:inherit;
     line-height: 23px;
 }
 /* range */
-.catalog-filter-group:nth-child(3){ /* last-child не применился????*/
-    margin-right: 72px;
+.catalog-filter-group:nth-child(3){
+    margin-right: 81px;
 }
 .range-wrapper-inputs{
     display: flex;
     width: 287px;
     height: 48px;
-    border: 2px solid #FFFFFF;
     box-sizing: border-box;
-    border-radius: 4px;
     margin-bottom: 40px;
 }
+
 .catalog-filter-label{
     display: flex;
     align-items: center;
     font: inherit;
     color: rgba(255, 255, 255, 0.3);
-    width:103px;
-    height: 45px;
-    padding: 0 20px;   
+    box-sizing: border-box;
+    width: 143px;
+    height: 48px;
+    padding: 0 20px;
 }
+
 .catalog-filter-label:first-of-type{
-    border-right: 2px solid #FFFFFF;
+    border: 2px solid   #fff;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+}
+.catalog-filter-label:last-of-type{
+    border: 2px solid #FFFFFF;
+    border-radius: 0 4px 4px 0;
 }
 .catalog-filter-input{
     width: 80px;
     padding: 0;
     font: inherit;
     color:#FFFFFF;
-    border: none;
-    background-color: transparent;    
+    border:none;
+    background-color: transparent;
     appearance: textfield; 
+}
+/* Состояния input and label*/
+.catalog-filter-label:first-of-type:hover{
+    border: 2px solid   rgba(255, 255, 255, 0.6);
+    border-radius: 4px 0 0 4px;
+}
+.catalog-filter-label:first-of-type:hover + .catalog-filter-label:last-of-type{
+    border-left: none;
+}
+.catalog-filter-label:last-of-type:hover{
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+}
+
+.catalog-filter-input:focus{
+    outline: none;    
+}
+.catalog-filter-label:first-of-type:focus-within,
+.catalog-filter-label:last-of-type:focus-within{
+    box-shadow: 0 0 0 3px #83B3D3,
+          inset 0 0 0 3px #83B3D3;    
+}
+.catalog-filter-label:first-of-type:active,
+.catalog-filter-label:last-of-type:active{
+    background-color: #756257;
 }
 .catalog-filter-input::-webkit-outer-spin-button,
 .catalog-filter-input::-webkit-inner-spin-button {
@@ -757,6 +986,11 @@ align-items: center;
 .sorting{
     margin-bottom: 45px;/* толкаем offer вниз */
 }
+.sorting-container{
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+}
 .sorting-title{
 font-weight: 700;
 font-size: 30px;
@@ -764,15 +998,25 @@ line-height: 39px;
 text-transform: uppercase;
 text-align: left;
 margin-right: 100px; /* толкаем input на место*/
-}/*чмсло 38 должнобыть переменной величиной ????*/
+}
 
 .sorting-select-control{
     width: 287px;
     height: 48px;
     border: 2px solid #E6E6E6;
     border-radius: 4px;
-}/*галочка в инпуте другая и не наместе, паддинг не подвинул, after к инпуту не прицепишь -
-нет содкржимого и закрывающего тега. В уроках ни слова и в стилях барбершопа тоже*/
+}
+.sorting-select-control:hover,
+.sorting-select-control:focus,
+.select-control:hover,
+.select-control:focus{
+    outline:  2px solid #83B3D3;
+    border: none;
+}
+.sorting-select-control:active,
+.select-control:active{
+    opacity: 0.3;
+}
 .sorting-select-control > option{
     font-family: PT Sans;
     font-style: normal;
@@ -784,16 +1028,13 @@ margin-right: 100px; /* толкаем input на место*/
 .sorting-list{
     display: flex;
 }
+.sorting-item:not(:last-child){
+    margin-right: 8px;
+}
 .sorting-item{
-    width: 48px;
-    height: 48px;
-    margin-left: 8px;
-    border: 2px solid #E6E6E6;
-    box-sizing: border-box;
-    border-radius: 4px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 16px 14px;    
+    background-size: 16px 14px;
 }
 .sorting-item:first-child{
     background-image: url(../images/icons/mode-tile.svg);
@@ -804,7 +1045,26 @@ background-image: url(../images/icons/mode-slideshow.svg);
 .sorting-item:last-child{
     background-image: url(../images/icons/mode-list.svg);
 }
-.sorting-current{
+.sorting-item a{
+    width: 48px;
+    height: 48px;
+    display: block;
+    border: 2px solid #E6E6E6;
+    border-radius: 4px;
+}
+.sorting-item a:hover,
+.sorting-item a:focus,
+.sorting-current a:hover,
+.sorting-current a:focus{
+    outline:  2px solid #83B3D3;
+    border-color: transparent;
+}
+.sorting-item a:active,
+.sorting-curren a:active{
+    outline: 2px solid #83B3D3;
+    border-color: transparent;
+}
+.sorting-current a{
     border-color: #000;
 }
 /* the end sorting */
@@ -812,8 +1072,11 @@ background-image: url(../images/icons/mode-slideshow.svg);
 .offer{
     margin-bottom: 30px;/* толкаем пагинацию вниз */
 }
-.offer-container{
+.offer-container{       
+    display: flex;
+    justify-content: space-between;
     flex-direction: column;
+    padding: 0 70px;
 }
 .offer-list{
     border-bottom: 1px solid #E6E6E6;
@@ -828,12 +1091,26 @@ background-image: url(../images/icons/mode-slideshow.svg);
 .offer-item-wrap{
     display: flex;
 }
-.offer-item-link{
+.hotel-image{
+    width: 100%;
+    height: 100%;
     display: block;
-    height: 120px;/*без "высоты" добавляется снизу 5рх "блок" ни чего не дает*/
+}
+.offer-item-link{
     text-decoration: none;
     color: #000;
     margin-right: 36px;
+}
+.offer-item-link:hover,
+.offer-item-title:hover{
+    opacity: 0.6;
+}
+.offer-item-link:focus{
+    outline: 2px solid #83B3D3;
+}
+.offer-item-link:active,
+.offer-item-title:active{
+    opacity: 0.3;
 }
 .offer-title-box{
     display: grid;
@@ -845,6 +1122,15 @@ background-image: url(../images/icons/mode-slideshow.svg);
     line-height: 31px;
     text-align: left;
     grid-column: 1/-1;  
+}
+.offer-item-title a{
+    text-decoration: none;
+    color: #333;
+}
+.offer-item-title a:focus{
+    outline: 2px solid #83B3D3;
+    border-radius: 10px;
+    padding: 5px 10px;
 }
 .offer-item span{
     line-height: 23px;
@@ -895,7 +1181,7 @@ background-image: url(../images/icons/mode-slideshow.svg);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 90px;/* толкаем подписку вниз */
+    margin-bottom: 90px;/* толкаем "подписку" вниз */
 }
 .pagination-list{
     display: flex;
@@ -915,11 +1201,9 @@ background-image: url(../images/icons/mode-slideshow.svg);
     line-height: 55px;
     color: #fff;
     background-color: #83B3D3;
+    border-radius: 4px;
     text-align: center;
     text-decoration: none;
-}
-.pagination-link:hover{
-    background-color:  #68A2CA;
 }
 .pagination-current{
     background-color: #F2F2F2;
@@ -937,9 +1221,11 @@ background-image: url(../images/icons/mode-slideshow.svg);
     background-color: #fff;
     border: 2px solid #E6E6E6;
     border-radius: 4px;
-}/*c "голочкой вниз" таже проблема, что и в сортировке */
+}
 /* the end pagination */
 /* catalog-mailing */
 .catalog-mailing{
     margin-bottom: 135px;
 }
+/* the end catalog-mailing */
+/* the end catalog */

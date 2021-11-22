@@ -21,7 +21,7 @@
                 <a class="navigation-link" href="catalog.html">Гостиницы</a>
               </li>
             </ul>
-          </nav>  
+          </nav>
             <img class="navigation-logo" src="images/icons/logo-sedona.svg"
                  width="138" height="70" alt="логотип города Сидона">              
           <div class="user-menu">              
@@ -32,7 +32,8 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11 6.5a4.5 4.5 0 11-9 0 4.5 4.5 0 019
                           0zm-.665 5.249a6.5 6.5 0 111.414-1.414l3.958 3.958-1.414 1.414-3.958-3.958z" />
                 </svg>
-                    <span class="visually-hidden">Поиск</span></a>
+                  <span class="visually-hidden">Поиск</span>
+              </a>
             </div>
             <div class="user-menu-item">
               <a class="user-menu-link" href="#">
@@ -41,18 +42,42 @@
                         5.5 0 0 1 9 4.1c0 1.3-.5 2.5-1.3 3.4l-7 7.9c-.2.2-.4.3-.8.3zm-6-9.5L9 
                         24.4l6.2-7c.5-.5.7-1.2.7-2 0-1.8-1.5-3.3-3.3-3.3-1 0-2 .5-2.7 1.3-.3.3-.6.4-.9.4-.3 
                         0-.6-.2-.8-.4a3.7 3.7 0 0 0-2.7-1.3 3.3 3.3 0 0 0-3.3 3.3c-.1.9.3 1.6.7 2.1-.1 0-.1
-                        0 0 0z" fill="#000"/>
+                        0 0 0z"/>
                   <path d="M31 9.5a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0z" fill="#7DB54F"/>
                   <path d="M17.6 12.3H19V7.4l.1-.6-.4.5-1 .8-.4-.5 2.2-1.7h.3v6.4h1.4v.7h-3.6v-.7zm7.9-4.7l-.2 1-.6 1.2a10.9
                         10.9 0 0 1-1.4 2.1l-.5.4H25.6v.7h-4v-.3a33.1 33.1 0 0 0 1.8-2.2 9.7 9.7 
                         0 0 0 1-1.9c.2-.3.2-.6.2-.9 0-.3 0-.6-.3-.8-.1-.2-.4-.3-.8-.3l-.7.1-.7.4-.3-.6.8-.5a3 
                         3 0 0 1 1-.1l.8.1a1.5 1.5 0 0 1 1 1v.6z" fill="#fff"/>
                 </svg>
-                  <span class="visually-hidden">Избранное</span></a>
+                  <span class="visually-hidden">Избранное</span>
+              </a>
+              <div class="popover popover-cart">
+                <div class="popover-content">
+                   <img class="popover-img" src="images/foto/hotel-2.jpg" 
+                       width="48" height="48" alt="вид месности">
+                       <div>
+                        <h3 class="popover-title">Desert Quail Inn</h3>
+                        <span class="popover-appartment">Мотель</span>
+                      </div>   
+                   <img class="popover-icon" src="images/icons/delete.svg"
+                        width="16" height="16" alt="иконка 'удалить'">
+                        <span class="visually-hidden">Удалить из корзины</span>
+                   <img class="popover-img" src="images/foto/hotel-3.jpg" 
+                        width="48" height="48" alt="вид месности">
+                        <div>
+                          <h3 class="popover-title">Villas at Poco Diablo</h3>
+                          <span class="popover-appartment">Апартометны</span>
+                        </div>           
+                   <img class="popover-icon" src="images/icons/delete.svg"
+                     width="16" height="16" alt="иконка 'удалить'">
+                     <span class="visually-hidden">Удалить из корзины</span>
+                </div>
+                <button class="button btn-old-add">Все избранные</button>
+              </div>
             </div>
             <div class="user-menu-item">
-              <a class="button btn-go-to" href="#">Хочу сюда!</a>
-            </div>
+                <a class="button btn-go-to" href="#">Хочу сюда!</a>
+            </div>            
           </div>
         </div>  
       </header>
@@ -163,18 +188,36 @@
             <div class="footer-social">            
                 <ul class="footer-social-list">
                   <li class="footer-social-item">
-                    <a class="footer-social-link footer-social-twitt" href="#">
+                    <a class="footer-social-link" href="https://twitter.com/htmlacademy_ru">
                       <span class="visually-hidden">Твиттер</span>
+                      <svg class="footer-social-icon" aria-hidden="true" focusable="false"
+                           width="18" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.6.2c1.8-.5 3.2.3 3.8 1.2l2.1-.7c0 .9-.6 1.5-.9
+                           1.8.7.1 1.4-.6 1.4-.6a3 3 0 0 1-1.7 2C16.1 10.7 13 15.1 5.7 
+                           15h-.5c-.4 0-4.4-.5-5.2-1.9 2.4.2 4.1-.4 
+                           5-1.2-1-.3-2.9-.4-3.2-2.9.4.1.6.2 1.3.1C1.8 8.3.4 7.5.5 
+                           5.3c.3.3 1.1.5 1.4.5C1.1 5.6-.2 2.5.9.9a11 11 0 0 0 7.6 3.8C8.7
+                            2.3 9.7.8 11.6.2z"/>
+                      </svg>
                     </a>
                   </li>
                   <li class="footer-social-item">
-                    <a class="footer-social-link footer-social-facebook" href="#">
+                    <a class="footer-social-link footer-social-facebook" href="https://www.facebook.com/htmlacademy">
                       <span class="visually-hidden">Фесбук</span>
+                      <svg class="footer-social-icon" aria-hidden="true" focusable="false"
+                           width="10" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 0a4 4 0 0 0-4 4v2H0v4h3v8h4v-8h3V6H7V4h3V0H7z"/>
+                      </svg>
                     </a>
                   </li>
                     <li class="footer-social-item">
-                      <a class="footer-social-link footer-social-youtube" href="#">
+                      <a class="footer-social-link footer-social-youtube" href="https://www.youtube.com/c/HTMLAcademyRUS">
                         <span class="visually-hidden">Ютъюб</span>
+                        <svg class="footer-social-icon" aria-hidden="true" focusable="false"
+                             width="20" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M17 0H2.9C1.2 0 0 1.5 0 3.2v9.5C0 14.5 1.2 16 2.9 16h14.3c1.5 
+                         0 2.9-1.5 2.9-3.2V3.2C19.9 1.5 18.7 0 17 0zM7 11.8V4.2L13.7 8 7 11.8z"/>
+                        </svg>
                       </a>
                   </li>
                 </ul>            
@@ -184,13 +227,84 @@
                 <a class="footer-contact-phone" href="tel:+7(812)812-12-12">+7(812)812-12-12</a>        
               </div>      
               <figure class="footer-logo">
-                <a class="footer-logo-link" href="//htmlacademy.ru">
-                  <img class="footer-logo-academy" src="images/icons/logo_htmlacademy.svg" 
-                  width="115" height="34" alt="Логотип HTML-Академии">
+                <a class="footer-logo-link" href="https://htmlacademy.ru/">
+                  <svg class="footer-logo-icon"
+                    width="115" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 12.9v2.6h2.5v-2.6H0zM11.6 4.5c-1.6 0-2.8.7-3.6 1.7h-.1V0h-2v15.5h2v-5.3c0-2.1 1.3-3.6
+                     3.3-3.6 1.8 0 2.9 1.4 2.9 3.2v5.7h2V9.4c.1-3-1.8-4.9-4.5-4.9zM26.6 
+                     4.8h-4.8V1.1h-2v3.8h-1.9v2h1.9v6c0 1.7 1 2.7 2.7 2.7h4.1v-2h-3.7c-.7
+                     0-1.1-.4-1.1-1.1V6.8h4.8v-2zM41.1 4.6c-1.6 0-2.9.8-3.5 2.1h-.1a3.7 3.7 
+                     0 0 0-3.4-2.1c-1.4 0-2.5.8-3.1 1.8h-.1V4.8H29v10.6h2V10c0-2 1-3.5 2.6-3.5 1.5 
+                     0 2.4 1 2.4 2.6v6.3h2V9.8c0-2.4 1.4-3.3 2.6-3.3 1.5 0 2.4 1 
+                     2.4 2.6v6.3h2V8.9c.1-2.5-1.4-4.3-3.9-4.3zM47.8 12.7c0 1.7 
+                     1 2.7 2.8 2.7h2v-2h-1.7c-.7 0-1.1-.4-1.1-1.1V0h-2v12.7zM28.9 19.7a4.9 
+                     4.9 0 0 0-3.9-1.8c-3.1 0-5.4 2.3-5.4 5.6s2.3 5.6 5.4 5.6c1.8 0 
+                     3-.8 3.8-1.9h.1v1.6h2V18.2h-2v1.5zm-3.6 7.4a3.5 3.5 0 0 1-3.6-3.6c0-2 1.4-3.6 
+                     3.6-3.6s3.6 1.6 3.6 3.6c0 1.9-1.4 3.6-3.6 3.6zM44.2 22c-.5-2.4-2.6-4.1-5.4-4.1a5.4 
+                     5.4 0 0 0-5.6 5.6c0 3.1 2.2 5.6 5.6 5.6 2.8 0 4.9-1.8 5.4-4.2h-2.1a3.4 3.4 0 0 1-3.3 
+                     2.3 3.5 3.5 0 0 1-3.6-3.6c0-2 1.4-3.6 3.6-3.6 1.6 0 2.8 1 3.3 2.2h2.1V22zM55.1 19.7a4.9 
+                     4.9 0 0 0-3.9-1.8c-3.1 0-5.4 2.3-5.4 5.6s2.3 5.6 5.4 5.6c1.8 0 
+                     3-.8 3.8-1.9h.1v1.6h2V18.2h-2v1.5zm-3.6 7.4a3.5 3.5 0 0 1-3.6-3.6c0-2 
+                     1.4-3.6 3.6-3.6s3.6 1.6 3.6 3.6c0 1.9-1.5 3.6-3.6 3.6zM68.7 19.8a5 5 0 0 0-3.9-1.9c-3.1 
+                     0-5.4 2.3-5.4 5.6s2.2 5.6 5.4 5.6c1.7 0 3-.8 3.8-1.8h.1v1.5h2V13.4h-2v6.4zm-3.6 
+                     7.3a3.5 3.5 0 0 1-3.6-3.6c0-2 1.4-3.6 3.6-3.6s3.6 1.6 3.6 3.6c-.1 2-1.5 3.6-3.6 
+                     3.6zM78.3 17.9a5.4 5.4 0 0 0-5.5 5.6c0 3 2.1 5.6 5.5 5.6 2.5 0 4.5-1.3 5.2-3.6h-2.1c-.5 
+                     1-1.6 1.6-3 1.6-1.9 0-3.3-1.3-3.4-2.9h8.8c.2-3.6-2-6.3-5.5-6.3zm0 1.9c1.7 0 3 1 
+                     3.3 2.6h-6.5a3.2 3.2 0 0 1 3.2-2.6zM98.2 17.9a4 4 0 0 0-3.6 2h-.1c-.6-1.2-1.8-2-3.4-2-1.4 
+                     0-2.5.7-3.1 1.8v-1.5h-1.9v10.6h2v-5.4c0-2 1-3.4 2.6-3.5 1.5 0 
+                     2.4 1 2.4 2.6v6.3h2v-5.6c0-2.4 1.4-3.3 2.6-3.3 1.5 0 2.4 1 2.4 
+                     2.6v6.3h2v-6.5c.1-2.6-1.4-4.4-3.9-4.4zM109.4 27l-3.6-8.9h-2.2l4.8 11.6c-.3.9-.7 
+                     1.2-1.7 1.2h-2.5v2h2.5c1.8 0 2.8-.8 3.5-2.6l4.7-12.2h-2.1l-3.4 8.9z"/>
+                  </svg>
                 </a>
               </figure>
           </div>
-        </footer>   
+        </footer>
+        <div class="modal-container">
+          <div class="modal modal-order">
+            <section class="modal-content">
+              <header class="modal-content-header">
+                <h2 class="modal-title">Поиск гостиницы в Седоне</h2>              
+                <button class="modal-close-button">
+                  <span class="visually-hidden">Закрыть</span>
+                </button>
+              </header>
+              <form class="modal-order-form" action="https://echo.htmlacademy.ru/" method="post">
+                <ul class="modal-form-group">
+                  <li class="item-group-row">
+                    <label class="modal-control" for="arrivl-date">Дата заезда:</label>
+                    <div class="item-group-wrep">
+                      <input class="modal-form-field" type="date" id="arrivl-date" name="arrivl-date">
+                      <span class="modal-input-caption">Мы не можем отправить вас в прошлое.</span>
+                  </div>
+                  </li>
+                  <li class="item-group-row">
+                    <label class="modal-control" for="leave-date">Дата выезда:</label>
+                    <div class="item-group-wrep">
+                      <input class="modal-form-field" type="date" id="leave-date" name="leave-date">
+                      <span class="modal-input-caption">На эти даты есть свободные номера. Пока есть.</span>
+                  </div>
+                  </li>
+                  <li class="item-group-row">                    
+                      <label class="modal-control" for="adults-numer">Взрослые:</label>
+                      <p>
+                        <button class="button form-toggle-plus"></button>
+                        <input class="modal-form-field" type="number" id="adults-number" name="adults-number">
+                        <button class="button form-toggle-minus"></button>
+                      </p>
+                      <label class="modal-control" for="adults-numer">Дети:</label>
+                      <p>
+                        <button class="button form-toggle-plus"></button>
+                        <input class="modal-form-field" type="number" id="adults-number" name="adults-number">
+                        <button class="button form-toggle-minus"></button>
+                      </p>
+                  </li>
+              </ul>
+                <button class="button btn-modal-saerch" type="submit" value="Найти">Найти</button>
+              </form>
+            </section>
+          </div>
+        </div>
     </div>
   </body>
 </html>
