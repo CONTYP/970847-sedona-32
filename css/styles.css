@@ -141,7 +141,6 @@ border-radius: 10px;
     outline: 3px solid #756257;
     background-color: #68A2CA;
 }
-}
 .btn-sub:focus{
     outline: 3px solid #fff;
     background-color: #68A2CA;
@@ -391,13 +390,17 @@ border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 20px;
 }   
 .advantages-item:nth-child(2), .advantages-item:nth-child(6){
 	padding:0;
 }
-.advantages .advantages-item__white{
+.advantages-item__white{
     color:#fff;
+}
+.advantages-item__white .advantages-description{
+    width: 220px;
 }
 .advantages-title{
     font-weight: 700;
@@ -409,7 +412,8 @@ border-radius: 10px;
     margin-bottom: 25px;
 }
 .advantages-description, .advantages-namber{
-    font-weight: 400;    
+    font-weight: 400;
+    width:250px;    
 }
 .advantages-item:nth-child(3),
 .advantages-item:nth-child(5),
@@ -600,7 +604,11 @@ border-radius: 10px;
     width: 100%;
     height: 100%;
     background-color: rgba(242, 242, 242, 0.8);
-}  
+    display: none;
+} 
+.modal-container-open{
+    display: block;
+} 
 .modal {
     position: relative;
     margin: auto;
@@ -633,8 +641,12 @@ border-radius: 10px;
     display: flex;
     justify-content: space-between;
 }
+.item-group-row:last-child{
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
 .modal-control{
-    font-family: PT Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -667,31 +679,46 @@ border-radius: 10px;
 }
 .modal-form-field[type="number"]{
     width: 33px;
-    padding: 0;
+}    
+.item-group-row:last-child .modal-control:first-of-type{
+    margin-right: 70px;
 }
-.item-group-row:last-child > .modal-control{
+.item-group-row:last-child .modal-control:last-of-type{
     margin-right: 20px;
 }
 .item-group-row:not(:last-child){
     margin-bottom: 10px;
 }
-.item-group-row > p{
+.row-wrap-button{
     display: flex;
     width: 133px;
     height: 50px;
 }
+.item-group-row:last-child .row-wrap-button:first-of-type{
+    margin-right: 55px;
+}
 .form-toggle-plus,
 .form-toggle-minus{
     padding: 0;
+    width: 50px;
+    height: 50px;
 }
 .form-toggle-plus{
     border-radius: 4px 0 0 4px;
+    background-image: url("../images/icons/plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .form-toggle-minus{
     border-radius: 0 4px 4px 0;
+    background-image: url("../images/icons/minus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.popover-order{
-    display: block;
+.modal-form-field::-webkit-outer-spin-button,
+.modal-form-field::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 .modal-close-button {
     width: 53px;
@@ -711,6 +738,44 @@ border-radius: 10px;
     border-radius: 50%;
     background-color: #83B3D3;
     border: none;
+    background-image: url("../images/icons/info.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-right: 12px;
+}
+.popover-order{
+    position: absolute;
+    top: 55px;
+    right: 35px;
+    width: 216px;
+    background-color: #333333;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+ /* display:none; */
+}
+.popover-order::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 120px;
+    top: -10px;
+    border-top: 10px solid #333;
+    border-right: 10px solid #333;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: rotate(-45deg);
+}
+.popover-order-open{
+    display: block;
+}
+.popup-text{
+    font-size: 16px;
+    line-height: 20px;
+    color:#fff;
+    text-align: left;
 }
 .btn-modal-saerch{
     height: 80px;    
@@ -830,7 +895,7 @@ left: -6px;/* компенсируем padding для outline при фокус�
     border-radius: 4px;
     cursor: pointer;
 }
-.catalog-filter-group:first-child .control:hover .control-mark{
+.control:hover .control-mark{
     background-color: rgba(255, 255, 255, 0.6);
 }
 .control-input[type="checkbox"]:focus + .control-mark,
@@ -1018,9 +1083,6 @@ margin-right: 100px; /* толкаем input на место*/
     opacity: 0.3;
 }
 .sorting-select-control > option{
-    font-family: PT Sans;
-    font-style: normal;
-    font-weight: normal;
     font-size: 18px; 
     line-height: 23px;
     color: #333333;
